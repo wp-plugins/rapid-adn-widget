@@ -3,13 +3,13 @@
 Plugin Name: Rapid App.net Widget
 Plugin URI: 
 Description: Display the latest updates from a App.net user inside a widget. 
-Version: 0.9
+Version: 1.1
 Author: Peter Wilson, Floate Design Partners
 Author URI: 
 License: GPLv2
 */
 
-define('RAPID_ADN_WIDGET_VERSION', '0.9');
+define('RAPID_ADN_WIDGET_VERSION', '1.1');
 
 class Rapid_ADN_Widget extends WP_Widget {
 
@@ -39,7 +39,7 @@ class Rapid_ADN_Widget extends WP_Widget {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '-min';
 		wp_register_script(
 			'rapid-adn-widget',
-			WP_PLUGIN_URL . "/rapid-adn-widget/rapid-adn-widget$suffix.js",
+			plugins_url( 'rapid-adn-widget/rapid-adn-widget' . $suffix . '.js' ),
 			'',
 			RAPID_ADN_WIDGET_VERSION,
 			true
